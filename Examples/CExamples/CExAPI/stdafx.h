@@ -6,10 +6,10 @@
 #pragma once
 
 // Change these values to use different versions
-#define WINVER			0x0500
-#define _WIN32_WINNT	0x0501
-#define _WIN32_IE		0x0501
-#define _RICHEDIT_VER	0x0200
+#define WINVER			0x0600
+#define _WIN32_WINNT	0x0601
+#define _WIN32_IE		0x0601
+#define _RICHEDIT_VER	0x0300
 
 #include <atlbase.h>
 #include <atlapp.h>
@@ -36,5 +36,5 @@ extern CAppModule _Module;
 
 //#import "progid:PXCComLib7.CPXCControlEx" rename_namespace("PXC") rename_namespace("PXC"), named_guids
 //#import "libid:{8E709746-FD2B-415B-8B80-098A5AAF5A81}" rename_namespace("PXC"), named_guids
-#import "..\..\..\pdfSaver.tlb" rename_namespace("PXC"), named_guids, exclude("IStream","ISequentialStream","_LARGE_INTEGER","_ULARGE_INTEGER","tagSTATSTG","_FILETIME")
+#import "pdfSaver.tlb" rename_namespace("PXC"), named_guids, exclude("IStream","ISequentialStream","_LARGE_INTEGER","_ULARGE_INTEGER","tagSTATSTG","_FILETIME")
 

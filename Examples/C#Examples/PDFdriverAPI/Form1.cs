@@ -48,7 +48,7 @@ namespace PDFdriverAPI
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			CPXCControlEx prnFactory = new CPXCControlEx();
-			PDFPrinter = prnFactory.get_Printer("", "PDF-XChange Standard V7", "<REG CODE>", "<DEV CODE>") as CPXCPrinter;
+			PDFPrinter = prnFactory.get_Printer("", "PDF-XChange Standard", "<REG CODE>", "<DEV CODE>") as CPXCPrinter;
 			PDFPrinter.OnStartDoc += new _IPXCPrinterEvents_OnStartDocEventHandler(prn_OnStartDoc);
 			PDFPrinter.OnFileSaved += new _IPXCPrinterEvents_OnFileSavedEventHandler(prn_OnFileSaved);
 			PDFPrinter.OnDocSpooled += new _IPXCPrinterEvents_OnDocSpooledEventHandler(prn_OnDocSpooled);

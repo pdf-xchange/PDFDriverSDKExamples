@@ -21,7 +21,7 @@
 	Public dlgOpenOpen As System.Windows.Forms.OpenFileDialog
 	Public WithEvents IE_GO As System.Windows.Forms.Button
 	Public WithEvents IE_URL As System.Windows.Forms.TextBox
-    Public WithEvents IE_URL_Label As System.Windows.Forms.Label
+	Public WithEvents IE_URL_Label As System.Windows.Forms.Label
 	Public WithEvents btnBrowseDoc As System.Windows.Forms.Button
 	Public WithEvents m_File As System.Windows.Forms.TextBox
 	Public WithEvents Frame1 As System.Windows.Forms.GroupBox

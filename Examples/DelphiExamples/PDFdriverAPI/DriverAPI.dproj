@@ -28,6 +28,12 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSDevice64)'!=''">
+        <Cfg_1_iOSDevice64>true</Cfg_1_iOSDevice64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
         <Cfg_1_Win32>true</Cfg_1_Win32>
         <CfgParent>Cfg_1</CfgParent>
@@ -98,11 +104,24 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_DcuOutput>..\..\..\temp\$(Platform)\$(Config)</DCC_DcuOutput>
+		<DCC_ExeOutput>..\..\..\Bin\$(Platform)\</DCC_ExeOutput>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_DcuOutput>..\..\..\temp\$(Platform)\$(Config)</DCC_DcuOutput>
+		<DCC_ExeOutput>..\..\..\Bin\$(Platform)\</DCC_ExeOutput>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>
@@ -122,6 +141,9 @@
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>
@@ -155,6 +177,7 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\17.0\Bpl\pxcCore.bpl">(untitled)</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

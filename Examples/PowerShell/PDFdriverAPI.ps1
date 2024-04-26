@@ -1,6 +1,6 @@
 #################################################################################
 #
-# PDF-XChange 7.0 Printer API
+# PDF-XChange 9.0 Printer API
 # PowerShell Examples
 #
 #################################################################################
@@ -47,20 +47,34 @@ $PDFPrinter.Option("Watermarks.Watermarks") = "Watermark1;Watermark2;Img";
 $PDFPrinter.Option("General.Specification") = -1;
 $PDFPrinter.Option("Save.SaveType")	= "Save";
 $PDFPrinter.Option("Save.ShowSaveDialog") = "No";
-$PDFPrinter.Option("Save.WhenExists") = "Overwrite";
+$PDFPrinter.Option("Save.WhenExists") = "Append";
 $PDFPrinter.Option("Save.RunApp") = "Yes";
 
 
-$PDFPrinter.Option("Save.File")	= "test.pdf";
+$PDFPrinter.Option("Save.File")	= "test1.pdf";
+
 
 $PDFPrinter.ApplyOptions(0);
 
+$PDFPrinter.SetAsDefaultPrinter()
+
+#$printer = Get-CimInstance -Class Win32_Printer -Filter "Name='"$pPrinterName"'"
+#Invoke-CimMethod -InputObject $printer -MethodName SetDefaultPrinter
+
+#(New-Object -ComObject WScript.Network).SetDefaultPrinter($pPrinterName)
+
+#Start-Process –FilePath “\\ds-nas\pdfStore\01\20\corruption of daily reports.pdf” -Verb PrintTo -PassThru
+
+Start-Process -FilePath "\\ds-nas\pdfStore\01\20\AgCDailyExampledocx.docx" -Verb PrintTo -PassThru -Wait
+
+$PDFPrinter.RestoreDefaultPrinter()
+
 #Print file from temp printer
-Get-Content -Path .\PDFdriverAPI.ps1 | Out-Printer $pPrinterName
+#Get-Content -Path '\\ds-nas\pdfStore\01\20\corruption of daily reports.pdf'  |  Out-Printer $pPrinterName
+#Get-Content -Path .\PDFdriverAPI.ps1 |  Out-Printer $pPrinterName
 
 <#
 #sets the printer associated with the IPXCPrinter object as the system default printer
-$PDFPrinter.SetAsDefaultPrinter()
 
 #Print file
 Get-Content -Path .\PDFdriverAPI.ps1 | Out-Printer
